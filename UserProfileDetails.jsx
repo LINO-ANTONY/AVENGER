@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import {
   Typography,
   Avatar,
-  IconButton,
   Dialog,
   DialogTitle,
   DialogContent,
   DialogActions,
   Button,
   TextField,
+  Grid
 } from '@mui/material';
 
 
@@ -29,7 +29,6 @@ const UserProfileDetails = ({ userDetails, onUpdateDetails }) => {
       place,
       age,
       email,
-      education,
       contactDetails: {
         phoneNumber,
         emailId,
@@ -108,13 +107,11 @@ const UserProfile = () => {
   const [openEditDialog, setOpenEditDialog] = useState(false);
   const [loginDetails, setLoginDetails] = useState({
     name: 'PAUL WALKER',
-    place: 'Sample Place',
-    age: 30,
+    place: ' Place',
+    age: 42,
     email: 'john.doe@example.com',
-    education: 'Sample Education',
     contactDetails: {
-      phoneNumber: '1234567890',
-      emailId: 'john.doe@example.com',
+      phoneNumber: '9778263870',
     },
     termsAndConditions: false,
   });
@@ -167,30 +164,48 @@ const UserProfile = () => {
           boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)',
         }}
       >
-        <Typography variant="h5" gutterBottom>
-          {loginDetails.name}
-        </Typography>
-        <Typography variant="body2" color="textSecondary" gutterBottom>
-          {loginDetails.email}
-        </Typography>
-        <Typography variant="body2" color="textSecondary">
-          Place: {loginDetails.place}
-        </Typography>
-        <Typography variant="body2" color="textSecondary">
-          Age: {loginDetails.age}
-        </Typography>
-        <Typography variant="body2" color="textSecondary">
-          Education: {loginDetails.education}
-        </Typography>
-        <Typography variant="body2" color="textSecondary">
-          Phone Number: {loginDetails.contactDetails.phoneNumber}
-        </Typography>
-        <Typography variant="body2" color="textSecondary">
-          Email ID: {loginDetails.contactDetails.emailId}
-        </Typography>
-        <Typography variant="body2" color="textSecondary">
-          Terms and Conditions: {loginDetails.termsAndConditions ? 'Accepted' : 'Not Accepted'}
-        </Typography>
+      <div
+        style={{
+          marginBottom: '32px',
+          backgroundColor: '#ffffff',
+          padding: '16px',
+          borderRadius: '8px',
+          boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)',
+        }}
+      >
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Typography variant="h5" gutterBottom>
+              {loginDetails.name}
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="body2" color="textSecondary" gutterBottom>
+              {loginDetails.email}
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="body2" color="textSecondary">
+              Place: {loginDetails.place}
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="body2" color="textSecondary">
+              Age: {loginDetails.age}
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="body2" color="textSecondary">
+              Phone Number: {loginDetails.contactDetails.phoneNumber}
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="body2" color="textSecondary">
+               contact Details:{loginDetails.contactDetails.contactDetails}
+            </Typography>
+          </Grid>
+        </Grid>
+      </div>
         
       </div>
 
