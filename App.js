@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-
-import UserProfileDetails from './components/UserProfileDetails';
+import HelpPage from './components/HelpPage';
 
 
 
@@ -9,9 +8,10 @@ import UserProfileDetails from './components/UserProfileDetails';
 function App() {
   return (
     <div className="App">
-      <UserProfileDetails/>
+      {/* <UserProfileDetails/> */}
       
-      
+      {/* <SettingsPage/> */}
+        <HelpPage/>
     </div>
   );
 };
